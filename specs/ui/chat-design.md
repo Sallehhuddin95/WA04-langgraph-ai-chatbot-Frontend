@@ -15,19 +15,21 @@ Lock the visual language for the chat surface. This file wins on colors, type, c
 - tint: blue-50 for user bubble and citation chips
 - text: slate-900 for main text
 - muted: slate-500 for secondary text, timestamps, and hints, gray-500 is allowed as an alias for secondary text
-- surface: white for message cards, composer, and sidebar panels
-- page: slate-50 for the app background
-- border: slate-200 for card and input borders
+- surface: white for message cards and thread buttons
+- page: slate-50 for the main column background
+- sidebar: slate-200 for the thread sidebar background
+- border: slate-200 for card and input borders, slate-300 for the sidebar edge
 - skeleton: slate-100 for loading blocks
 - focus: blue-500 for focus rings
-- no extra accent colors, no heavy gradients
+- no extra accent colors, no gradients, no artwork
+- brand: Singularity in the header, assistant name Singularity above each reply, avatar fallback S
 
 ## Theme
 
 - default theme is light. Dark mode is opt-in through a header toggle.
 - strategy: class on `html`. Use Tailwind `dark:` variant. Hold state in next-themes or an isolated Zustand store per `docs/frontend/FRONTEND_GUIDELINE.md` section 7.
-- light tokens: page slate-50, surface white, text slate-900, primary blue-600, primary hover blue-500, border slate-200, skeleton slate-100, tint blue-50, focus blue-500.
-- dark tokens: page slate-950, surface slate-900, text slate-100, primary blue-500, primary hover blue-400, border slate-800, skeleton slate-800, tint blue-950 for chips and slate-800 for bubbles, focus blue-400.
+- light tokens: page slate-50, sidebar slate-200, surface white, text slate-900, primary blue-600, primary hover blue-500, border slate-200, sidebar edge slate-300, skeleton slate-100, tint blue-50, focus blue-500.
+- dark tokens: page slate-950, sidebar black (near-black), surface slate-900, text slate-100, primary blue-500, primary hover blue-400, border slate-800, skeleton slate-800, tint blue-950 for chips and slate-800 for bubbles, focus blue-400.
 - toggle: header slot. Use shadcn Switch or Button with Sun and Moon icons.
 - persist: save choice in localStorage or cookie. On first load respect prefers-color-scheme. Fall back to light when no saved choice and no OS preference.
 - no flash: set the class on `html` early with an inline script in the root layout before first paint.
